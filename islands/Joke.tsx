@@ -27,7 +27,7 @@ export const ProgramJokeHandler = async () => {
     return joke;
 };
 export const JokeAPIHandler = async () => {
-    const respose = await fetch("https://v2.jokeapi.dev/joke/Programming?blacklistFlags=nsfw,racist,sexist,explicit&format=txt", {
+    const respose = await fetch("https://v2.jokeapi.dev/joke/Any?blacklistFlags=nsfw,racist,sexist,explicit&format=txt", {
         headers: {
             Accept: "text/plain",
         },
@@ -47,7 +47,7 @@ export default function Joke() {
     }, []);
     return (
         <div class="flex flex-col gap-2 w-full">
-            <p>Regular</p>
+            <p>Dad</p>
             <p class="flex-grow-1 font-bold text-xl">{joke}</p>
             <p>Programmer</p>
             <p class="flex-grow-1 font-bold text-xl">{programJoke}</p>
