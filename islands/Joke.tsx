@@ -26,13 +26,24 @@ export const ProgramJokeHandler = async () => {
     const joke = await response.text();
     return joke;
 };
+export const JokeAPIHandler = async () => {
+    const respose = await fetch("https://v2.jokeapi.dev/joke/Programming?blacklistFlags=nsfw,racist,sexist,explicit&format=txt", {
+        headers: {
+            Accept: "text/plain",
+        },
+    });
+    const joke = await response.text();
+    return joke;
+};
 
 export default function Joke() {
     const [joke, setJoke] = useState("");
     const [programJoke, setProgramJoke] = useState("");
+    const [apiJoke, setApiJoke] = useState("");
     useEffect(() => {
         JokeHandler().then((joke) => setJoke(joke));
         ProgramJokeHandler().then((joke) => setProgramJoke(joke));
+        JokeAPIHandler().then((joke) => setApiJoke(joke));
     }, []);
     return (
         <div class="flex flex-col gap-2 w-full">
@@ -40,6 +51,8 @@ export default function Joke() {
             <p class="flex-grow-1 font-bold text-xl">{joke}</p>
             <p>Programmer</p>
             <p class="flex-grow-1 font-bold text-xl">{programJoke}</p>
+            <p>JokeAPI</p>
+            <p class="flex-grow-1 font-bold text-xl">{apiJoke}</p>
             <button
                 class="p-2 text-white bg-blue-500 rounded"
                 onClick={() => {
