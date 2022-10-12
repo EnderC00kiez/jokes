@@ -11,9 +11,14 @@ export default function Home() {
     const date = new Date();
     date.setHours(date.getHours() + 1);
     return (
-        <div class="p-4 mx-auto max-w-screen-md">
-          <Head />
-          <Joke />
-        </div>
+        // make the background gray-900 (tailwind)
+        <body class="bg-gray-900">    
+            <div class="p-4 mx-auto max-w-screen-md">
+              <Head />
+              <Joke />
+            </div>
+        </body>
+    
   );
 }
+;
