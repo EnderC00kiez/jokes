@@ -13,7 +13,7 @@ export default function Home() {
     return (
         // make the background gray-900 (tailwind)
         <body class="bg-gray-900">    
-            <div class="p-4 mx-auto max-w-screen-md">
+            <div class="p-4 mx-auto max-w-screen-md text-white">
               <Head />
               <Joke />
             </div>
