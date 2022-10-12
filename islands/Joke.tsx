@@ -16,9 +16,8 @@ export const JokeHandler = async () => {
 
 export const ProgramJokeHandler = async () => {
     // current url
-    const url = window.location.href;
     // now we can use the url to fetch the joke (/api/joke)
-    const response = await fetch(url + "api/joke", {
+    const response = await fetch("https://v2.jokeapi.dev/joke/Programming?blacklistFlags=nsfw,religious,political,racist,sexist,explicit&format=txt", {
         headers: {
             Accept: "text/plain",
         },
@@ -27,7 +26,7 @@ export const ProgramJokeHandler = async () => {
     return joke;
 };
 export const JokeAPIHandler = async () => {
-    const response = await fetch("https://v2.jokeapi.dev/joke/Any?blacklistFlags=nsfw,racist,sexist,explicit&format=txt", {
+    const response = await fetch("https://v2.jokeapi.dev/joke/Miscellaneous,Dark,Pun,Spooky,Christmas?blacklistFlags=nsfw,religious,political,racist,sexist,explicit&format=txt", {
         headers: {
             Accept: "text/plain",
         },
