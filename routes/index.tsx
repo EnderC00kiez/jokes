@@ -12,6 +12,7 @@ export default function Home() {
     date.setHours(date.getHours() + 1);
     return (
         <div class="p-4 mx-auto max-w-screen-md">
+          <Head />
           <Joke />
         </div>
   );
